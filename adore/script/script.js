@@ -7,7 +7,7 @@ const imageNames = ['Davi.jpg','Diego.jpg','Kaka.jpg','Ronaldo-teclado.jpg']; //
 
 imageNames.forEach(name => {
     const img = document.createElement('img');
-    img.src = `./imagens/${name}`;
+    img.src = `imagens/${name}`;
     img.onclick = () => {
         slide.src = img.src;
     };
@@ -16,5 +16,5 @@ imageNames.forEach(name => {
 
 // Exibe a primeira imagem no slideshow
 if (imageNames.length > 0) {
-    slide.src = `./imagens/${imageNames[0]}`;
+    slide.src = `imagens/${imageNames[0]}`;
 }
