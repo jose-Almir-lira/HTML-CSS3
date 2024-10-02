@@ -1,20 +1,48 @@
-const slide = document.getElementById('slide');
 const thumbnailsContainer = document.getElementById('thumbnails');
-const images = ['Davi.jpg','Diego.jpg','Kaka.jpg','Ronaldo-teclado.jpg']; // Adicione os nomes das imagens aqui
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modalImage');
+const close = document.getElementById('close');
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
 
-// Lista de imagens (adapte conforme suas imagens)
-const imageNames = ['Davi.jpg','Diego.jpg','Kaka.jpg','Ronaldo-teclado.jpg']; // Adicione mais imagens aqui
+const imageNames = ['Davi.JPG', 'Diego.jpg', 'Kaka.jpg','Ronaldo-teclado.jpg']; // Adicione mais imagens aqui
+let currentIndex = 0;
 
-imageNames.forEach(name => {
+// Cria miniaturas
+imageNames.forEach((name, index) => {
     const img = document.createElement('img');
-    img.src = `${name}`;
-    img.onclick = () => {
-        slide.src = img.src;
-    };
+    img.src = `imagens/${name}`;
+    img.onclick = () => openModal(index);
     thumbnailsContainer.appendChild(img);
 });
 
-// Exibe a primeira imagem no slideshow
-if (imageNames.length > 0) {
-    slide.src = `${imageNames[0]}`;
+// Abre o modal
+function openModal(index) {
+    currentIndex = index;
+    modalImage.src = `imagens/${imageNames[currentIndex]}`;
+    modal.style.display = 'flex';
 }
+
+// Fecha o modal
+close.onclick = () => {
+    modal.style.display = 'none';
+};
+
+// Navega para a imagem anterior
+prev.onclick = () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : imageNames.length - 1;
+    modalImage.src = `imagens/${imageNames[currentIndex]}`;
+};
+
+// Navega para a próxima imagem
+next.onclick = () => {
+    currentIndex = (currentIndex < imageNames.length - 1) ? currentIndex + 1 : 0;
+    modalImage.src = `imagens/${imageNames[currentIndex]}`;
+};
+
+// Fecha o modal ao clicar fora da imagem
+window.onclick = (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+};
