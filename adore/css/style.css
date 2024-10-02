@@ -115,24 +115,24 @@ section.img > p{
 
 section#img1{
     background-image: url(../imagens/RONALDO.JPG);
-    background-position: left center;
+    background-position: center center;
     background-size: cover;
     
 }
 
 section#img2{
     background-image: url(../imagens/Diego.JPG);
-    background-position: left center;
+    background-position: center center;
     background-size: cover;
 }
 section#img3{
     background-image: url(../imagens/Davi.JPG);
-    background-position: left center;
+    background-position: center center;
     background-size: cover;
 }
 section#img4{
     background-image: url(../imagens/Kaka.JPG);
-    background-position: left center;
+    background-position: center center;
     background-size: cover;
 }
 
