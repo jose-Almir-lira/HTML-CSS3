@@ -5,7 +5,7 @@ const close = document.getElementById('close');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 
-const imageNames = ['Davi.JPG', 'Diego.jpg', 'Kaka.jpg','Ronaldo-teclado.jpg']; // Adicione mais imagens aqui
+const imageNames = ['Davi.JPG','Diego.JPG','Kaka.JPG','Ronaldo-teclado.JPG']; // Adicione mais imagens aqui
 let currentIndex = 0;
 
 // Cria miniaturas
