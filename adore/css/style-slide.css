@@ -87,20 +87,24 @@ body {
 }
 
 /* Responsividade */
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
     #slide {
         width: 100%;
         height: auto;
     }
     nav{
         position:fixed;
-        margin-top: -110px;
+        margin-top: -111px;
     }
     
 }
 
-@media (max-width: 500px) {
+@media (max-width: 380px) {
     .thumbnails img {
         width: 70px; /* Miniaturas menores em celulares */
+    }
+    nav{
+        position:fixed;
+      
     }
 }
