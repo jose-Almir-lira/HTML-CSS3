@@ -1,48 +1,49 @@
-const thumbnailsContainer = document.getElementById('thumbnails');
 const modal = document.getElementById('modal');
-const modalImage = document.getElementById('modalImage');
-const close = document.getElementById('close');
-const prev = document.getElementById('prev');
-const next = document.getElementById('next');
-
-const imageNames = ['Ronaldo-teclado.JPG','Diego.JPG','Davi.JPG','Kaka.JPG']; // Adicione mais imagens aqui
+const modalImg = document.getElementById('modalImg');
+const closeBtn = document.getElementById('close');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
 let currentIndex = 0;
 
-// Cria miniaturas
-imageNames.forEach((name, index) => {
-    const img = document.createElement('img');
-    img.src = `imagens/${name}`;
-    img.onclick = () => openModal(index);
-    thumbnailsContainer.appendChild(img);
-});
+let elemento = document.getElementById('gallery');
+let totalImagens = 54; // Ajuste conforme necessário
 
-// Abre o modal
-function openModal(index) {
-    currentIndex = index;
-    modalImage.src = `imagens/${imageNames[currentIndex]}`;
-    modal.style.display = 'flex';
+for (let i = 1; i <= totalImagens; i++) {
+    let novoElemento = document.createElement('img');
+    
+    // Definindo os atributos das imagens
+    novoElemento.src = `imagens/imagensP/img (${i}).jpg`;
+    novoElemento.setAttribute("data-full", `imagens/imagensG/img (${i}).jpg`); // Ajuste se as imagens forem diferentes
+    novoElemento.alt = `Imagem ${i}`;
+    
+    // Adicionando o evento de clique para abrir o modal
+    novoElemento.addEventListener('click', () => {
+        openModal(novoElemento.getAttribute("data-full"));
+        currentIndex = i - 1; // Atualiza o índice atual
+    });
+    
+    elemento.appendChild(novoElemento);
 }
 
-// Fecha o modal
-close.onclick = () => {
+closeBtn.addEventListener('click', closeModal);
+prevBtn.addEventListener('click', showPrev);
+nextBtn.addEventListener('click', showNext);
+
+function openModal(src) {
+    modal.style.display = 'flex';
+    modalImg.src = src;
+}
+
+function closeModal() {
     modal.style.display = 'none';
-};
+}
 
-// Navega para a imagem anterior
-prev.onclick = () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : imageNames.length - 1;
-    modalImage.src = `imagens/${imageNames[currentIndex]}`;
-};
+function showPrev() {
+    currentIndex = (currentIndex - 1 + totalImagens) % totalImagens;
+    modalImg.src = `imagens/imagensG/img (${currentIndex + 1}).jpg`; // Atualiza a imagem
+}
 
-// Navega para a próxima imagem
-next.onclick = () => {
-    currentIndex = (currentIndex < imageNames.length - 1) ? currentIndex + 1 : 0;
-    modalImage.src = `imagens/${imageNames[currentIndex]}`;
-};
-
-// Fecha o modal ao clicar fora da imagem
-window.onclick = (event) => {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-};
+function showNext() {
+    currentIndex = (currentIndex + 1) % totalImagens;
+    modalImg.src = `imagens/imagensG/img (${currentIndex + 1}).jpg`; // Atualiza a imagem
+}

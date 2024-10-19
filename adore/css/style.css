@@ -59,7 +59,7 @@ nav{
 }
 
 nav > a{
-    color:var(--cor1);
+    color:var(--cor0);
     padding: 10px;
     font-weight: bold;
     text-decoration: none;
@@ -70,7 +70,7 @@ nav > a{
 nav > a:hover{
     border-radius: 7px;
     background-color: var(--cor3);
-    color:var(--cor0);
+    color:var(--cor2);
 }
 
 body{
@@ -116,24 +116,24 @@ section.img > p{
 }
 
 section#img1{
-    background-image: url(../imagens/Ronaldo-teclado.JPG);
+    background-image: url(../imagens/imagensG/Ronaldo-teclado.JPG);
     background-position: center center;
     background-size: cover;
     
 }
 
 section#img2{
-    background-image: url(../imagens/Diego.JPG);
+    background-image: url(../imagens/imagensG/Diego.JPG);
     background-position: center center;
     background-size: cover;
 }
 section#img3{
-    background-image: url(../imagens/Davi.JPG);
+    background-image: url(../imagens/imagensG/Davi.JPG);
     background-position: center center;
     background-size: cover;
 }
 section#img4{
-    background-image: url(../imagens/Kaka.JPG);
+    background-image: url(../imagens/imagensG/Kaka.JPG);
     background-position: center center;
     background-size: cover;
 }
