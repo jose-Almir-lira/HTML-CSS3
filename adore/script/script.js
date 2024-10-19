@@ -40,10 +40,10 @@ function closeModal() {
 
 function showPrev() {
     currentIndex = (currentIndex - 1 + totalImagens) % totalImagens;
-    modalImg.src = `imagens/imagensG/img (${currentIndex + 1}).jpg`; // Atualiza a imagem
+    modalImg.src = `imagens/imagensG/img (${currentIndex + 1}).JPG`; // Atualiza a imagem
 }
 
 function showNext() {
     currentIndex = (currentIndex + 1) % totalImagens;
-    modalImg.src = `imagens/imagensG/img (${currentIndex + 1}).jpg`; // Atualiza a imagem
+    modalImg.src = `imagens/imagensG/img (${currentIndex + 1}).JPG`; // Atualiza a imagem
 }
