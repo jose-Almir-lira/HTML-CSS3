@@ -13,7 +13,7 @@ for (let i = 1; i <= totalImagens; i++) {
     
     // Definindo os atributos das imagens
     novoElemento.src = `imagens/imagensP/img (${i}).jpg`;
-    novoElemento.setAttribute("data-full", `imagens/imagensG/img (${i}).jpg`); // Ajuste se as imagens forem diferentes
+    novoElemento.setAttribute("data-full", `imagens/imagensG/img (${i}).JPG`); // Ajuste se as imagens forem diferentes
     novoElemento.alt = `Imagem ${i}`;
     
     // Adicionando o evento de clique para abrir o modal
